@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+main {
+  position: relative;
+}
+
+.left-arrow {
+  float: left;
+  height: 100%;
+  width: 40px;
+}
+
+.right-arrow {
+  float: right;
+  height: 100%;
+  width: 50px;
+}
+
+.icon {
+  height: 100%;
+  width: 100%;
+}
+
+.icon .frame {
+  position: relative;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background-image: url('../images/0.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

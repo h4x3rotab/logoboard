@@ -1,0 +1,44 @@
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+
+    <main>
+        <div class="left-arrow">
+        </div>
+        <div class="icon">
+            <div class="frame" data="0"></div>
+        </div>
+        <div class="right-arrow">
+        </div>
+    </main>
+
+<script>
+let logoIdx = 0;
+const numLogos = 10;
+
+document.addEventListener("keydown", event => {
+  if (event.isComposing || event.keyCode === 229) {
+    return;
+  }
+  if (event.keyCode == 37) {
+    // left
+    logoIdx = (logoIdx - 1 + numLogos) % numLogos;
+  } else if (event.keyCode == 39) {
+    // right
+    logoIdx = (logoIdx + 1) % numLogos;
+  } else if (event.key === 'Enter') {
+    // enter
+    fetch('count/' + logoIdx.toString())
+        .then(r => {
+            console.log(r.statusText);
+        });
+  }
+  document.querySelector('.frame').style.backgroundImage = `url('images/${logoIdx}.png')`;
+});
+</script>
+
+</body>
+</html>
